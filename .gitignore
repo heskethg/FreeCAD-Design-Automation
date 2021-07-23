@@ -1,2 +1,5 @@
 # To ignore environment
 *.env
+
+# To ignore launch settings
+*.vscode
