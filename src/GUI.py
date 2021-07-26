@@ -1,28 +1,17 @@
-""" import sys
-
-from PySide6.QtCore import Qt
-
-from PySide6.QtWidgets import QApplication, QLabel
-
-if __name__ == "__main__":
-
-    app = QApplication(sys.argv)
-
-    label = QLabel("Hello World", alignment=Qt.AlignCenter)
-
-    label.show()
-
-    sys.exit(app.exec_()) """
-
-import FreeCAD
-import FreeCADGui
+import FreeCAD as App
+import FreeCADGui as Gui
 import Part
 import sys
-from PySide6.QtWidgets import QApplication
+
 if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    FreeCADGui.showMainWindow()
-    doc = FreeCAD.newDocument()
+    myDoc = App.newDocument("Test1")
+    App.setActiveDocument("Test1")
+    print(App.listDocuments())
+    print(App.activeDocument())
+
+    # Gui.showMainWindow()
+
     box = Part.makeBox(100, 100, 100)
     Part.show(box)
-    sys.exit(app.exec_())
+
+print(sys.version)
