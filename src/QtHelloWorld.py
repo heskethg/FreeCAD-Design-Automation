@@ -1,7 +1,5 @@
 import sys, random
-
 from PySide2 import QtCore, QtWidgets, QtGui
-
 class MyWidget(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
@@ -10,7 +8,8 @@ class MyWidget(QtWidgets.QWidget):
 
         self.button = QtWidgets.QPushButton("Click me!")
         self.text = QtWidgets.QLabel("Hello World",
-                                     alignment=QtCore.Qt.AlignCenter)
+                                    alignment=QtCore.Qt.AlignCenter)
+        self.text.setFont(QtGui.QFont("Arial", 24))
 
         self.layout = QtWidgets.QVBoxLayout(self)
         self.layout.addWidget(self.text)
@@ -27,6 +26,7 @@ if __name__ == "__main__":
 
     widget = MyWidget()
     widget.resize(800, 600)
+    widget.setWindowTitle("Qt Hello World")
     widget.show()
 
     sys.exit(app.exec_())
