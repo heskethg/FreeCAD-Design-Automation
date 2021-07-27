@@ -6,7 +6,7 @@ import sys
 from PySide2.QtWidgets import QApplication
 
 if __name__ == "__main__":
-    qapp = QApplication(sys.argv)
+    qapp = QApplication([])
     Gui.showMainWindow()
     
     doc = App.newDocument()
